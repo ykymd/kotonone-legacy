@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="libfiles\CBmsPro.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CDDPro90.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CDDTexPro90.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CDIPro81.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CDSPro81.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CDSSegPro81.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CTimer.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CWav.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="libfiles\CWindow.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="CGame.cpp">
+      <Filter>Lib File</Filter>
+    </ClCompile>
+    <ClCompile Include="SqBMS.cpp">
+      <Filter>Kotonone File</Filter>
+    </ClCompile>
+    <ClCompile Include="BindFunc.cpp">
+      <Filter>Kotonone File</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Kotonone File</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugConsole.cpp">
+      <Filter>Kotonone File</Filter>
+    </ClCompile>
+    <ClCompile Include="CSquirrel.cpp">
+      <Filter>Kotonone File</Filter>
+    </ClCompile>
+    <ClCompile Include="CBMS.cpp">
+      <Filter>Kotonone File</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="libfiles\CBmsPro.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CDDPro90.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CDDTexPro90.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CDIPro81.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CDSPro81.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CDSSegPro81.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CTimer.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CWav.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="libfiles\CWindow.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="CGame.h">
+      <Filter>Lib File</Filter>
+    </ClInclude>
+    <ClInclude Include="SqBMS.h">
+      <Filter>Kotonone File</Filter>
+    </ClInclude>
+    <ClInclude Include="BindFunc.h">
+      <Filter>Kotonone File</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Kotonone File</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugConsole.h">
+      <Filter>Kotonone File</Filter>
+    </ClInclude>
+    <ClInclude Include="CSquirrel.h">
+      <Filter>Kotonone File</Filter>
+    </ClInclude>
+    <ClInclude Include="CBMS.h">
+      <Filter>Kotonone File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MusicGame2014.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Scripts\boot.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\const.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\gameplay.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\note.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\point.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\resources.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\test.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\thread.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\title.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="Scripts\var.nut">
+      <Filter>Script File</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Lib File">
+      <UniqueIdentifier>{5f6613de-4f66-4aaf-ad4b-177065a86113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script File">
+      <UniqueIdentifier>{03551cc3-460a-4909-bd07-24b38af404f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kotonone File">
+      <UniqueIdentifier>{252e9941-1a5f-4c5b-8cb1-7fb23d8c01c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
