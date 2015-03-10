@@ -34,5 +34,5 @@ function boot()
     InitSoundMem();
 
     // タイトルシーンへと切り替える
-    ChangeScene("Select");
+    ChangeScene("Logo");
 }

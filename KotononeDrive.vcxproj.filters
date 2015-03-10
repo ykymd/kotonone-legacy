@@ -23,7 +23,6 @@
     <ClCompile Include="Music.cpp">
       <Filter>Source File</Filter>
     </ClCompile>
-    <ClCompile Include="CBmsPro.cpp" />
     <ClCompile Include="BMSHeader.cpp">
       <Filter>Source File</Filter>
     </ClCompile>
@@ -51,7 +50,6 @@
     <ClInclude Include="Music.h">
       <Filter>Header File</Filter>
     </ClInclude>
-    <ClInclude Include="CBmsPro.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="BMSHeader.h">
       <Filter>Header File</Filter>

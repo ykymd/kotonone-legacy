@@ -106,7 +106,6 @@
     <ClCompile Include="BindFunc.cpp" />
     <ClCompile Include="BMSHeader.cpp" />
     <ClCompile Include="CBMS.cpp" />
-    <ClCompile Include="CBmsPro.cpp" />
     <ClCompile Include="DebugConsole.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="CSquirrel.cpp" />
@@ -118,7 +117,6 @@
     <ClInclude Include="BindFunc.h" />
     <ClInclude Include="BMSHeader.h" />
     <ClInclude Include="CBMS.h" />
-    <ClInclude Include="CBmsPro.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="DebugConsole.h" />
     <ClInclude Include="Game.h" />
