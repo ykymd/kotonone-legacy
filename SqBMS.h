@@ -1,7 +1,10 @@
 #pragma once
 #include "CBMS.h"
+#include "BMSWrapper.h"
 
 #include <vector>
+
+using namespace BMS;
 
 namespace Kotone{
 	// バインド用KotononeBMS管理クラス
@@ -57,6 +60,8 @@ namespace Kotone{
 		Kotone::SelectSceneData availableSongs[BMSMAXBUFFER];
 		Kotone::CBMS bms;
 		Kotone::LPBMSBAR bar;
+
+		Chart *chart;
 
 		static std::vector<std::string> readDir(std::string folder);
 	};

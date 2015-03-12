@@ -4,6 +4,8 @@
 #include <boost/algorithm/string.hpp>
 #include "DxLib.h"
 
+#include "SceneController.h"
+
 int titleFontHandle = -1;
 int subFontHandle = -1;
 
@@ -49,7 +51,7 @@ bool g_FinalizeFlag = false;
 bool g_FirstSceneFlag = true;
 
 // シーン名(テーブル名)を表す文字列
-tstring g_SceneName = _SC("");
+//tstring g_SceneName = _SC("");
 
 // シーンを切り替える関数
 void ChangeScene(const SQChar* scene_name)
@@ -69,7 +71,8 @@ void ChangeScene(const SQChar* scene_name)
 	}
 
 	// シーン名をセットする
-	g_SceneName = scene_name;
+	SceneController::getInstance()->pushScene(scene_name);
+	//g_SceneName = scene_name;
 }
 
 // 0と1を交互にセットする変数。g_JoypadInputStateのインデックスに指定し、

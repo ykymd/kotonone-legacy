@@ -69,14 +69,14 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>C:\lib\SQUIRREL3\include;$(SQRAT_DIR)\include;C:\lib\Dxlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\BMSManager;C:\lib\SQUIRREL3\include;$(SQRAT_DIR)\include;C:\lib\Dxlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>C:\lib\Dxlib;C:\lib\SQUIRREL3\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\Debug;C:\lib\Dxlib;C:\lib\SQUIRREL3\lib</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <AdditionalDependencies>squirrel_debug.lib;sqstdlib_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -88,7 +88,7 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;C:\lib\SQUIRREL3\include;C:\lib\Dxlib;$(SQRAT_DIR)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\BMSManager;$(DXSDK_DIR)\Include;C:\lib\SQUIRREL3\include;C:\lib\Dxlib;$(SQRAT_DIR)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -97,7 +97,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>C:\lib\Dxlib;$(DXSDK_DIR)\Lib\x86;C:\lib\SQUIRREL3\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\lib\Dxlib;C:\lib\SQUIRREL3\lib;C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\Release</AdditionalLibraryDirectories>
       <AdditionalDependencies>squirrel_release.lib;sqstdlib_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -106,40 +106,51 @@
     <ClCompile Include="BindFunc.cpp" />
     <ClCompile Include="BMSHeader.cpp" />
     <ClCompile Include="CBMS.cpp" />
+    <ClCompile Include="ChartEx.cpp" />
     <ClCompile Include="DebugConsole.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="CSquirrel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Music.cpp" />
+    <ClCompile Include="SceneController.cpp" />
     <ClCompile Include="SqBMS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BindFunc.h" />
-    <ClInclude Include="BMSHeader.h" />
     <ClInclude Include="CBMS.h" />
+    <ClInclude Include="ChartEx.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="DebugConsole.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="CSquirrel.h" />
     <ClInclude Include="Music.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SceneController.h" />
     <ClInclude Include="SqBMS.h" />
+    <ClInclude Include="tstring.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="KotononeDrive.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="data\Scripts\boot.nut" />
+    <None Include="data\Scripts\const.nut" />
+    <None Include="data\Scripts\FadeIO.nut" />
+    <None Include="data\Scripts\gameplay.nut" />
+    <None Include="data\Scripts\logo.nut" />
+    <None Include="data\Scripts\note.nut" />
+    <None Include="data\Scripts\notesmanager.nut" />
+    <None Include="data\Scripts\note_table.nut" />
+    <None Include="data\Scripts\resources.nut" />
+    <None Include="data\Scripts\result.nut" />
+    <None Include="data\Scripts\select.nut" />
+    <None Include="data\Scripts\SongList.nut" />
+    <None Include="data\Scripts\songwnd.nut" />
+    <None Include="data\Scripts\thread.nut" />
+    <None Include="data\Scripts\title.nut" />
+    <None Include="data\Scripts\var.nut" />
     <None Include="packages.config" />
-    <None Include="Scripts\boot.nut" />
-    <None Include="Scripts\const.nut" />
-    <None Include="Scripts\gameplay.nut" />
-    <None Include="Scripts\note.nut" />
-    <None Include="Scripts\point.nut" />
-    <None Include="Scripts\resources.nut" />
-    <None Include="Scripts\test.nut" />
-    <None Include="Scripts\thread.nut" />
-    <None Include="Scripts\title.nut" />
-    <None Include="Scripts\var.nut" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico" />

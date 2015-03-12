@@ -22,6 +22,8 @@ SqBMS::SqBMS()
 	// 選曲可能曲データの初期化
 	ZeroMemory(availableSongs, sizeof(availableSongs));
 
+	chart = nullptr;
+
 	// マシンの周波数を取得
 	LARGE_INTEGER freq;
 	QueryPerformanceFrequency(&freq);
@@ -58,6 +60,7 @@ void SqBMS::SQ_Stop()
 bool SqBMS::SQ_Load(char* file_name)
 {
 	bms.Load(_SC(file_name));
+
 	isStart = false;
 	return true;
 }

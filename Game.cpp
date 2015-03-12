@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "BindFunc.h"
+#include "SceneController.h"
 
 using namespace Kotone;
 
@@ -145,20 +146,20 @@ void Game::Run()
 		// シーン名.finalize関数を呼び出す
 		if (g_FinalizeFlag)
 		{
-			GetSquirrelFunction((g_SceneName + _SC(".finalize")).c_str()).Execute();
+			GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".finalize")).c_str()).Execute();
 			g_FinalizeFlag = false;
 		}
 
 		if (g_InitializeFlag)
 		{
 			// シーン名.initialize関数を呼び出す
-			GetSquirrelFunction((g_SceneName + _SC(".initialize")).c_str()).Execute();
+			GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".initialize")).c_str()).Execute();
 
 			// 更新処理用の関数として、シーン名.update関数をセットする
-			update_function = GetSquirrelFunction((g_SceneName + _SC(".update")).c_str());
+			update_function = GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".update")).c_str());
 
 			// 描画処理用の関数として、シーン名.draw関数をセットする
-			draw_function = GetSquirrelFunction((g_SceneName + _SC(".draw")).c_str());
+			draw_function = GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".draw")).c_str());
 		}
 
 
@@ -266,7 +267,7 @@ void Game::Finalize()
 {
 	// finalize関数を呼び出す
 	if (g_FirstSceneFlag)
-		GetSquirrelFunction((g_SceneName + _SC(".finalize")).c_str()).Execute();
+		GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".finalize")).c_str()).Execute();
 
 	// 関数オブジェクトを解放する
 	// (Sqrat::Function型のデストラクタ内で仮想マシンにアクセスしているので、

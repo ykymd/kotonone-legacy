@@ -26,6 +26,10 @@
     <ClCompile Include="BMSHeader.cpp">
       <Filter>Source File</Filter>
     </ClCompile>
+    <ClCompile Include="ChartEx.cpp" />
+    <ClCompile Include="SceneController.cpp">
+      <Filter>GameFramework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -51,8 +55,12 @@
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="debug.h" />
-    <ClInclude Include="BMSHeader.h">
+    <ClInclude Include="ChartEx.h" />
+    <ClInclude Include="tstring.h">
       <Filter>Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneController.h">
+      <Filter>GameFramework</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -62,37 +70,56 @@
     <Image Include="icon1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\boot.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\const.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\gameplay.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\note.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\point.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\resources.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\test.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\thread.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\title.nut">
-      <Filter>Script File</Filter>
-    </None>
-    <None Include="Scripts\var.nut">
-      <Filter>Script File</Filter>
-    </None>
     <None Include="packages.config" />
+    <None Include="data\Scripts\boot.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\const.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\FadeIO.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\gameplay.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\logo.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\note.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\note_table.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\notesmanager.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\resources.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\result.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\select.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\SongList.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\songwnd.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\thread.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\title.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="data\Scripts\var.nut">
+      <Filter>Script File</Filter>
+    </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header File">
@@ -103,6 +130,9 @@
     </Filter>
     <Filter Include="Script File">
       <UniqueIdentifier>{51061af0-6b3e-4c8a-9fe9-cc7a2f88b6cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework">
+      <UniqueIdentifier>{0fc889cb-f8c5-451d-8c8b-cdc7c2459cd3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
