@@ -1,7 +1,5 @@
 #include "SceneController.h"
 
-#include <squirrel.h>
-
 // ジェネレータ
 SceneController* SceneController::getInstance(void)
 {

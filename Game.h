@@ -3,7 +3,7 @@
 #include "DxLib.h"
 #include <sqrat.h>
 #include <vector>
-#include <boost/algorithm/string.hpp>
+
 
 namespace Kotone {
 	class Game
@@ -38,7 +38,6 @@ namespace Kotone {
 		void Run();
 		void Finalize();
 
-		Sqrat::Function GetSquirrelFunction(const SQChar* callback_func);
 		void InitializeJoypadInputState();
 		void UpdateJoypadInputState();
 	};

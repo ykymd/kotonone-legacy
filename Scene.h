@@ -1,6 +1,8 @@
 #pragma once
 #include "tstring.h"
-#include <squirrel.h>
+#include <sqrat.h>
+
+using namespace Sqrat;
 
 class Scene
 {
@@ -8,10 +10,10 @@ public:
 	Scene(const char* sceneName);
 	~Scene();
 
-	std::string Initialize();
-	std::string Update();
-	std::string Draw();
-	std::string Finalize();
+	Function Initialize();
+	Function Update();
+	Function Draw();
+	Function Finalize();
 
 private:
 	tstring getName();

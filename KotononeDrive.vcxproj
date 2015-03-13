@@ -113,6 +113,8 @@
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneController.cpp" />
+    <ClCompile Include="SceneUtil.cpp" />
+    <ClCompile Include="ScriptLoader.cpp" />
     <ClCompile Include="SqBMS.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +128,8 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneController.h" />
+    <ClInclude Include="SceneUtil.h" />
+    <ClInclude Include="ScriptLoader.h" />
     <ClInclude Include="SqBMS.h" />
     <ClInclude Include="tstring.h" />
   </ItemGroup>

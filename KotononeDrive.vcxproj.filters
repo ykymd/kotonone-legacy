@@ -32,6 +32,12 @@
     <ClCompile Include="Scene.cpp">
       <Filter>GameFramework</Filter>
     </ClCompile>
+    <ClCompile Include="ScriptLoader.cpp">
+      <Filter>GameFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneUtil.cpp">
+      <Filter>GameFramework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -64,6 +70,12 @@
       <Filter>GameFramework</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
+      <Filter>GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptLoader.h">
+      <Filter>GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneUtil.h">
       <Filter>GameFramework</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,29 +1,9 @@
 #include "Game.h"
 #include "BindFunc.h"
 #include "SceneController.h"
+#include "ScriptLoader.h"
 
 using namespace Kotone;
-
-// Squirrel側の関数を取得する
-Sqrat::Function Game::GetSquirrelFunction(const SQChar* callback_func)
-{
-	// "Reload.seriaize" のように、テーブル内の関数を指す文字列が渡された場合に
-	// ドット区切りで分割して、vecに格納していく
-	std::vector<tstring> vec;
-	boost::split(vec, callback_func, boost::is_any_of(_T(".")));
-
-	// 最初はルートテーブルから
-	Sqrat::Table tbl = Sqrat::RootTable();
-
-	// 最後のテーブル(vecの末尾よりひとつ手前)を取得する
-	for (int i = 1, n = vec.size(); i<n; i++)
-	{
-		tbl = tbl.GetSlot(vec[i - 1].c_str());
-	}
-
-	// 関数(vecの末尾)を取得する
-	return Sqrat::Function(tbl, vec[vec.size() - 1].c_str());
-}
 
 // キーボードのキーとジョイパッドのボタンの押下状態を初期化する
 void Game::InitializeJoypadInputState()
@@ -52,45 +32,25 @@ void Game::UpdateJoypadInputState()
 	g_JoypadInputState[INPUT_TYPE::RIGHT][g_FlipIndex] =
 		(DxLib::GetJoypadInputState(DX_INPUT_KEY_PAD1) & PAD_INPUT_RIGHT) != 0;
 
-	g_JoypadInputState[INPUT_TYPE::ONE][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_3); //||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_1) != 0);
+	g_JoypadInputState[INPUT_TYPE::ONE][g_FlipIndex] = CheckHitKey(KEY_INPUT_3);
 
-	g_JoypadInputState[INPUT_TYPE::TWO][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_E); //||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_2) != 0);
+	g_JoypadInputState[INPUT_TYPE::TWO][g_FlipIndex] = CheckHitKey(KEY_INPUT_E);
 
-	g_JoypadInputState[INPUT_TYPE::THREE][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_D); //||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_3) != 0);
+	g_JoypadInputState[INPUT_TYPE::THREE][g_FlipIndex] = CheckHitKey(KEY_INPUT_D);
 
-	g_JoypadInputState[INPUT_TYPE::FOUR][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_C); //||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_4) != 0);
+	g_JoypadInputState[INPUT_TYPE::FOUR][g_FlipIndex] = CheckHitKey(KEY_INPUT_C);
 
-	g_JoypadInputState[INPUT_TYPE::FIVE][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_0); //||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_5) != 0);
+	g_JoypadInputState[INPUT_TYPE::FIVE][g_FlipIndex] = CheckHitKey(KEY_INPUT_0);
 
-	g_JoypadInputState[INPUT_TYPE::SIX][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_O); //||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_6) != 0);
+	g_JoypadInputState[INPUT_TYPE::SIX][g_FlipIndex] = CheckHitKey(KEY_INPUT_O);
 
-	g_JoypadInputState[INPUT_TYPE::SEVEN][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_K); //||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_7) != 0);
+	g_JoypadInputState[INPUT_TYPE::SEVEN][g_FlipIndex] = CheckHitKey(KEY_INPUT_K);
 
-	g_JoypadInputState[INPUT_TYPE::EIGHT][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_M);// ||
-	//((DxLib::GetJoypadInputState(DX_INPUT_PAD1) & PAD_INPUT_8) != 0);
+	g_JoypadInputState[INPUT_TYPE::EIGHT][g_FlipIndex] = CheckHitKey(KEY_INPUT_M);
 
-	g_JoypadInputState[INPUT_TYPE::ESC][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_ESCAPE);
-	//(DxLib::GetJoypadInputState(DX_INPUT_KEY_PAD1) & PAD_INPUT_9) != 0;
+	g_JoypadInputState[INPUT_TYPE::ESC][g_FlipIndex] = CheckHitKey(KEY_INPUT_ESCAPE);
 
-	g_JoypadInputState[INPUT_TYPE::SPACE][g_FlipIndex] =
-		CheckHitKey(KEY_INPUT_SPACE);
-	//(DxLib::GetJoypadInputState(DX_INPUT_KEY_PAD1) & PAD_INPUT_10) != 0;
+	g_JoypadInputState[INPUT_TYPE::SPACE][g_FlipIndex] = CheckHitKey(KEY_INPUT_SPACE);
 }
 
 bool Game::Init()
@@ -130,8 +90,9 @@ void Game::Run()
 	// キーボードとジョイパッドの入力状態を初期化する
 	InitializeJoypadInputState();
 
-	// Squirrel側のboot関数を呼び出す
-	GetSquirrelFunction(_SC("boot")).Execute();
+	// Squirrel側の最初に呼ばれる関数を呼び出す
+	auto initialFunction = ScriptLoader::getFunction(_SC("boot"));
+	initialFunction.Execute();
 
 	// 現在の時間(マイクロ秒)を取得し、OldTimeにセットする(DXライブラリAPI)
 	OldTime = DxLib::GetNowHiPerformanceCount();
@@ -151,20 +112,20 @@ void Game::Run()
 		// シーン名.finalize関数を呼び出す
 		if (g_FinalizeFlag)
 		{
-			GetSquirrelFunction(currentScene.Finalize().c_str()).Execute();
+			currentScene.Finalize().Execute();
 			g_FinalizeFlag = false;
 		}
 
 		if (g_InitializeFlag)
 		{
 			// シーン名.initialize関数を呼び出す
-			GetSquirrelFunction(currentScene.Initialize().c_str()).Execute();
+			currentScene.Initialize().Execute();
 
 			// 更新処理用の関数として、シーン名.update関数をセットする
-			update_function = GetSquirrelFunction(currentScene.Update().c_str());
+			update_function = currentScene.Update();
 
 			// 描画処理用の関数として、シーン名.draw関数をセットする
-			draw_function = GetSquirrelFunction(currentScene.Draw().c_str());
+			draw_function = currentScene.Draw();
 		}
 
 
@@ -272,7 +233,7 @@ void Game::Finalize()
 {
 	// finalize関数を呼び出す
 	if (g_FirstSceneFlag)
-		GetSquirrelFunction(SceneController::getInstance()->getCurrentScene().Finalize().c_str()).Execute();
+		SceneController::getInstance()->getCurrentScene().Finalize().Execute();
 
 	// 関数オブジェクトを解放する
 	// (Sqrat::Function型のデストラクタ内で仮想マシンにアクセスしているので、

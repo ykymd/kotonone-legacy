@@ -1,4 +1,6 @@
 #include "Scene.h"
+#include "ScriptLoader.h"
+#include "SceneUtil.h"
 
 Scene::Scene(const char* sceneName)
 {
@@ -14,22 +16,26 @@ tstring Scene::getName()
 	return name;
 }
 
-std::string Scene::Initialize()
+Function Scene::Initialize()
 {
-	return name + ".initialize";
+	auto functionName = name + delimiter + SceneMethod::Initialize;
+	return ScriptLoader::getFunction(functionName.c_str());
 }
 
-std::string Scene::Update()
+Function Scene::Update()
 {
-	return name + ".update";
+	auto functionName = name + delimiter + SceneMethod::Update;
+	return ScriptLoader::getFunction(functionName.c_str());
 }
 
-std::string Scene::Draw()
+Function Scene::Draw()
 {
-	return name + ".draw";
+	auto functionName = name + delimiter + SceneMethod::Draw;
+	return ScriptLoader::getFunction(functionName.c_str());
 }
 
-std::string Scene::Finalize()
+Function Scene::Finalize()
 {
-	return name + ".finalize";
+	auto functionName = name + delimiter + SceneMethod::Finalize;
+	return ScriptLoader::getFunction(functionName.c_str());
 }
