@@ -10,8 +10,8 @@ SceneController* SceneController::getInstance(void)
 }
 
 SceneController::SceneController(void)
-	:g_SceneName(_SC(""))
 {
+	currentScene = new Scene("root");
 }
 
 
@@ -20,13 +20,13 @@ SceneController::~SceneController()
 }
 
 // 現在のシーン
-const tstring SceneController::currentScene(void)
+Scene& SceneController::getCurrentScene(void)
 {
-	return g_SceneName;
+	return *currentScene;
 }
 
 // シーン遷移
-void SceneController::pushScene(const char* scene_name)
+void SceneController::pushScene(Scene* nextScene)
 {
-	g_SceneName = scene_name;
+	currentScene = nextScene;
 }

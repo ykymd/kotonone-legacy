@@ -1,6 +1,7 @@
 #pragma once
 
 #include "tstring.h"
+#include "Scene.h"
 
 class SceneController
 {
@@ -11,16 +12,15 @@ public:
 	static SceneController* getInstance(void);
 
 	// 現在のシーン
-	const tstring SceneController::currentScene(void);
+	Scene& SceneController::getCurrentScene(void);
 
 	// シーン遷移
-	void pushScene(const char* scene_name);
+	void pushScene(Scene* nextScene);
 
 private:
 	// コンストラクタ隠蔽
 	SceneController(void);
 
-	// シーン名(テーブル名)を表す文字列
-	tstring g_SceneName;
+	Scene* currentScene;
 };
 

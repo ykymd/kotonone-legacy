@@ -140,26 +140,31 @@ void Game::Run()
 	titleFontHandle = CreateFontToHandle("@ＭＳ 明朝", 18, -1, DX_FONTTYPE_ANTIALIASING);
 	subFontHandle = CreateFontToHandle("@ＭＳ 明朝", 16, -1, DX_FONTTYPE_ANTIALIASING);
 
+	auto sceneController = SceneController::getInstance();
+
 	while (DxLib::ProcessMessage() == 0){
+		// 現在のシーンを取得
+		auto currentScene = sceneController->getCurrentScene();
+
 		/* シーン切替時の処理 */
 
 		// シーン名.finalize関数を呼び出す
 		if (g_FinalizeFlag)
 		{
-			GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".finalize")).c_str()).Execute();
+			GetSquirrelFunction(currentScene.Finalize().c_str()).Execute();
 			g_FinalizeFlag = false;
 		}
 
 		if (g_InitializeFlag)
 		{
 			// シーン名.initialize関数を呼び出す
-			GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".initialize")).c_str()).Execute();
+			GetSquirrelFunction(currentScene.Initialize().c_str()).Execute();
 
 			// 更新処理用の関数として、シーン名.update関数をセットする
-			update_function = GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".update")).c_str());
+			update_function = GetSquirrelFunction(currentScene.Update().c_str());
 
 			// 描画処理用の関数として、シーン名.draw関数をセットする
-			draw_function = GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".draw")).c_str());
+			draw_function = GetSquirrelFunction(currentScene.Draw().c_str());
 		}
 
 
@@ -267,7 +272,7 @@ void Game::Finalize()
 {
 	// finalize関数を呼び出す
 	if (g_FirstSceneFlag)
-		GetSquirrelFunction((SceneController::getInstance()->currentScene() + _SC(".finalize")).c_str()).Execute();
+		GetSquirrelFunction(SceneController::getInstance()->getCurrentScene().Finalize().c_str()).Execute();
 
 	// 関数オブジェクトを解放する
 	// (Sqrat::Function型のデストラクタ内で仮想マシンにアクセスしているので、

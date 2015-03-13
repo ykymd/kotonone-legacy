@@ -49,7 +49,6 @@ extern bool g_FinalizeFlag;
 extern bool g_FirstSceneFlag;
 
 // シーン名(テーブル名)を表す文字列
-//extern tstring g_SceneName;
 
 // シーンを切り替える関数
 extern void ChangeScene(const SQChar* scene_name);

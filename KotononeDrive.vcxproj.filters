@@ -26,8 +26,10 @@
     <ClCompile Include="BMSHeader.cpp">
       <Filter>Source File</Filter>
     </ClCompile>
-    <ClCompile Include="ChartEx.cpp" />
     <ClCompile Include="SceneController.cpp">
+      <Filter>GameFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
       <Filter>GameFramework</Filter>
     </ClCompile>
   </ItemGroup>
@@ -55,11 +57,13 @@
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="debug.h" />
-    <ClInclude Include="ChartEx.h" />
     <ClInclude Include="tstring.h">
       <Filter>Header File</Filter>
     </ClInclude>
     <ClInclude Include="SceneController.h">
+      <Filter>GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
       <Filter>GameFramework</Filter>
     </ClInclude>
   </ItemGroup>
@@ -119,7 +123,6 @@
     <None Include="data\Scripts\var.nut">
       <Filter>Script File</Filter>
     </None>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header File">

@@ -106,25 +106,25 @@
     <ClCompile Include="BindFunc.cpp" />
     <ClCompile Include="BMSHeader.cpp" />
     <ClCompile Include="CBMS.cpp" />
-    <ClCompile Include="ChartEx.cpp" />
     <ClCompile Include="DebugConsole.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="CSquirrel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Music.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneController.cpp" />
     <ClCompile Include="SqBMS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BindFunc.h" />
     <ClInclude Include="CBMS.h" />
-    <ClInclude Include="ChartEx.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="DebugConsole.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="CSquirrel.h" />
     <ClInclude Include="Music.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneController.h" />
     <ClInclude Include="SqBMS.h" />
     <ClInclude Include="tstring.h" />
@@ -133,7 +133,6 @@
     <ResourceCompile Include="KotononeDrive.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="data\Scripts\boot.nut" />
     <None Include="data\Scripts\const.nut" />
     <None Include="data\Scripts\FadeIO.nut" />

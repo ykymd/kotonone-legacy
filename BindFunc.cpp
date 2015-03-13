@@ -51,7 +51,6 @@ bool g_FinalizeFlag = false;
 bool g_FirstSceneFlag = true;
 
 // シーン名(テーブル名)を表す文字列
-//tstring g_SceneName = _SC("");
 
 // シーンを切り替える関数
 void ChangeScene(const SQChar* scene_name)
@@ -70,9 +69,10 @@ void ChangeScene(const SQChar* scene_name)
 		g_FinalizeFlag = true;
 	}
 
+	auto nextScene = new Scene(scene_name);
+
 	// シーン名をセットする
-	SceneController::getInstance()->pushScene(scene_name);
-	//g_SceneName = scene_name;
+	SceneController::getInstance()->pushScene(nextScene);
 }
 
 // 0と1を交互にセットする変数。g_JoypadInputStateのインデックスに指定し、

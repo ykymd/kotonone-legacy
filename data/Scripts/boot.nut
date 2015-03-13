@@ -11,7 +11,7 @@ SQInclude("resources.nut");
 //SQInclude("note.nut");
 //SQInclude("notesmanager.nut");
 
-//　リソースのロード
+// リソースのロード
 SQInclude("SongList.nut");
 
 // 各クラスのロード
@@ -34,5 +34,5 @@ function boot()
     InitSoundMem();
 
     // タイトルシーンへと切り替える
-    ChangeScene("Logo");
+    ChangeScene("Select");
 }
