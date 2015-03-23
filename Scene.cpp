@@ -11,11 +11,6 @@ Scene::~Scene()
 {
 }
 
-tstring Scene::getName()
-{
-	return name;
-}
-
 Function Scene::Initialize()
 {
 	auto functionName = name + delimiter + SceneMethod::Initialize;

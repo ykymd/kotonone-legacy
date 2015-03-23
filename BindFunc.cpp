@@ -69,7 +69,8 @@ void ChangeScene(const SQChar* scene_name)
 		g_FinalizeFlag = true;
 	}
 
-	auto nextScene = new Scene(scene_name);
+	// 遷移先シーンを生成
+	auto nextScene = Scene(scene_name);
 
 	// シーン名をセットする
 	SceneController::getInstance()->pushScene(nextScene);
@@ -78,9 +79,6 @@ void ChangeScene(const SQChar* scene_name)
 // 0と1を交互にセットする変数。g_JoypadInputStateのインデックスに指定し、
 // 前回の状態と今回の状態を交互に保持するために利用される
 int g_FlipIndex = 0;
-
-// 使用できるキーの種類の数
-//const int enableKeyNum = 12;
 
 // キーが押された状態を保持する変数。今回の状態と前回の状態を保持する
 BOOL g_JoypadInputState[enableKeyNum][2];

@@ -2,6 +2,7 @@
 
 #include "tstring.h"
 #include "Scene.h"
+#include <stack>
 
 class SceneController
 {
@@ -12,15 +13,15 @@ public:
 	static SceneController* getInstance(void);
 
 	// 現在のシーン
-	Scene& SceneController::getCurrentScene(void);
+	Scene& getCurrentScene(void);
 
 	// シーン遷移
-	void pushScene(Scene* nextScene);
+	void pushScene(Scene& nextScene);
 
 private:
 	// コンストラクタ隠蔽
 	SceneController(void);
 
-	Scene* currentScene;
+	std::stack<Scene&> sceneStack;
 };
 

@@ -26,17 +26,17 @@
     <ClCompile Include="BMSHeader.cpp">
       <Filter>Source File</Filter>
     </ClCompile>
-    <ClCompile Include="SceneController.cpp">
-      <Filter>GameFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>GameFramework</Filter>
-    </ClCompile>
     <ClCompile Include="ScriptLoader.cpp">
       <Filter>GameFramework</Filter>
     </ClCompile>
     <ClCompile Include="SceneUtil.cpp">
-      <Filter>GameFramework</Filter>
+      <Filter>GameFramework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>GameFramework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneController.cpp">
+      <Filter>GameFramework\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,17 +66,17 @@
     <ClInclude Include="tstring.h">
       <Filter>Header File</Filter>
     </ClInclude>
-    <ClInclude Include="SceneController.h">
-      <Filter>GameFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>GameFramework</Filter>
-    </ClInclude>
     <ClInclude Include="ScriptLoader.h">
       <Filter>GameFramework</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>GameFramework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneController.h">
+      <Filter>GameFramework\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="SceneUtil.h">
-      <Filter>GameFramework</Filter>
+      <Filter>GameFramework\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +148,9 @@
     </Filter>
     <Filter Include="GameFramework">
       <UniqueIdentifier>{0fc889cb-f8c5-451d-8c8b-cdc7c2459cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework\Scene">
+      <UniqueIdentifier>{f1f4c226-9cb6-452f-8814-75be1013efb3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

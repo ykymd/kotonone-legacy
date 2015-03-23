@@ -9,7 +9,7 @@ SceneController* SceneController::getInstance(void)
 
 SceneController::SceneController(void)
 {
-	currentScene = new Scene("root");
+	sceneStack.push(Scene("root"));
 }
 
 
@@ -20,11 +20,17 @@ SceneController::~SceneController()
 // 現在のシーン
 Scene& SceneController::getCurrentScene(void)
 {
-	return *currentScene;
+	if (!sceneStack.empty())
+	{
+		return sceneStack.top();
+	}
+	else{
+		return Scene("root");
+	}
 }
 
 // シーン遷移
-void SceneController::pushScene(Scene* nextScene)
+void SceneController::pushScene(Scene& nextScene)
 {
-	currentScene = nextScene;
+	sceneStack.push(nextScene);
 }

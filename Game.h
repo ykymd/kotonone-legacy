@@ -4,7 +4,6 @@
 #include <sqrat.h>
 #include <vector>
 
-
 namespace Kotone {
 	class Game
 	{

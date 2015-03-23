@@ -16,8 +16,6 @@ public:
 	Function Finalize();
 
 private:
-	tstring getName();
-
 	// シーン名(テーブル名)を表す文字列
 	tstring name;
 };
