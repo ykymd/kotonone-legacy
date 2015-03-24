@@ -2,6 +2,7 @@
 #include "SqBMS.h"
 #include "BindFunc.h"
 #include "DxLib.h"
+#include "SceneController.h"
 
 #include <tchar.h>
 #include <sqstdmath.h>
@@ -131,6 +132,7 @@ bool CSquirrel::Init()
 		Func(_SC("DrawLine"), SQ_DrawLine).
 		Func(_SC("GetColor"), SQ_GetColor).
 		Func(_SC("ChangeScene"), ChangeScene).
+		Func(_SC("BackScene"), BackScene).
 		Func(_SC("GetJoypadInputStatePushed"), GetJoypadInputStatePushed).
 		Func(_SC("GetJoypadInputStatePressed"), GetJoypadInputStatePressed).
 		Func(_SC("SetDrawBlendMode"), DxLib::SetDrawBlendMode).
@@ -214,6 +216,24 @@ bool CSquirrel::Init()
 		Func(_SC("isStart"), &SqBMS::SQ_isStart).
 		Func(_SC("isFinished"), &SqBMS::SQ_isFinished).
 		Func(_SC("Clear"), &SqBMS::SQ_Clear));
+
+	// シーンクラスを追加
+	/*
+	Sqrat::RootTable().Bind(
+		_SC("Scene"),
+		Sqrat::Class<Scene>());
+	//*/
+
+	// シーン管理クラスを追加
+	/*
+	Sqrat::RootTable().Bind(
+		_SC("SceneController"),
+		Sqrat::Class<SceneController>().
+		StaticFunc(_SC("getInstance"), &SceneController::getInstance).
+		Func(_SC("getCurrentScene"), &SceneController::getCurrentScene).
+		Func(_SC("pushScene"), &SceneController::pushScene).
+		Func(_SC("popScene"), &SceneController::popScene));
+	//*/
 
 	// Squirrelコード読み込み
 	//*

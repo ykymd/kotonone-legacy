@@ -18,3 +18,10 @@ public:
 	static const std::string Draw;
 	static const std::string Finalize;
 };
+
+enum class SceneType
+{
+	ROOT,
+	VIEW,
+	MODAL,
+};

@@ -7,8 +7,6 @@
 class SceneController
 {
 public:
-	~SceneController();
-
 	// ジェネレータ
 	static SceneController* getInstance(void);
 
@@ -18,10 +16,25 @@ public:
 	// シーン遷移
 	void pushScene(Scene& nextScene);
 
-private:
-	// コンストラクタ隠蔽
-	SceneController(void);
+	// 前のシーンに戻る
+	void popScene();
 
-	std::stack<Scene&> sceneStack;
+	void setInitializeFlag(bool flag){ initializeFlag = flag; }
+	void setFinalizeFlag(bool flag){ finalizeFlag = flag; }
+	void setFirstSceneFlag(bool flag){ firstSceneFlag = flag; }
+
+	bool getInitializeFlag(){ return initializeFlag; }
+	bool getFinalizeFlag(){ return finalizeFlag; }
+	bool getFirstSceneFlag(){ return firstSceneFlag; }
+
+private:
+	// initialize, finalizeを呼び出すかのフラグ
+	bool initializeFlag;
+	bool finalizeFlag;
+	bool firstSceneFlag;
+
+	std::stack<Scene> sceneStack;
+
+	void changeScene();
 };
 

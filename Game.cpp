@@ -110,13 +110,13 @@ void Game::Run()
 		/* シーン切替時の処理 */
 
 		// シーン名.finalize関数を呼び出す
-		if (g_FinalizeFlag)
+		if (sceneController->getFinalizeFlag())
 		{
 			currentScene.Finalize().Execute();
-			g_FinalizeFlag = false;
+			sceneController->setFinalizeFlag(false);
 		}
 
-		if (g_InitializeFlag)
+		if (sceneController->getInitializeFlag())
 		{
 			// シーン名.initialize関数を呼び出す
 			currentScene.Initialize().Execute();
@@ -200,9 +200,9 @@ void Game::Run()
 		}
 
 		// シーン切替時には、更新処理を1回だけ行う
-		if (g_InitializeFlag)
+		if (sceneController->getInitializeFlag())
 		{
-			g_InitializeFlag = false;
+			sceneController->setInitializeFlag(false);
 			UpdateCount = 1;
 		}
 
@@ -231,9 +231,10 @@ void Game::Run()
 
 void Game::Finalize()
 {
+	auto sceneController = SceneController::getInstance();
 	// finalize関数を呼び出す
-	if (g_FirstSceneFlag)
-		SceneController::getInstance()->getCurrentScene().Finalize().Execute();
+	if (sceneController->getFirstSceneFlag())
+		sceneController->getCurrentScene().Finalize().Execute();
 
 	// 関数オブジェクトを解放する
 	// (Sqrat::Function型のデストラクタ内で仮想マシンにアクセスしているので、

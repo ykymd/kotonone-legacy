@@ -44,14 +44,16 @@ extern int subFontHandle;
 extern bool OpenSquirrelFile(char* file_name);
 
 // initialize, finalize関数を呼び出すかどうかのフラグ
-extern bool g_InitializeFlag;
-extern bool g_FinalizeFlag;
-extern bool g_FirstSceneFlag;
+//extern bool g_InitializeFlag;
+//extern bool g_FinalizeFlag;
+//extern bool g_FirstSceneFlag;
 
 // シーン名(テーブル名)を表す文字列
 
 // シーンを切り替える関数
 extern void ChangeScene(const SQChar* scene_name);
+
+extern void BackScene();
 
 // 0と1を交互にセットする変数。g_JoypadInputStateのインデックスに指定し、
 // 前回の状態と今回の状態を交互に保持するために利用される

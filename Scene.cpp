@@ -1,10 +1,10 @@
 #include "Scene.h"
 #include "ScriptLoader.h"
-#include "SceneUtil.h"
 
-Scene::Scene(const char* sceneName)
+Scene::Scene(const char* sceneName, SceneType type)
 {
 	name = sceneName;
+	sceneType = type;
 }
 
 Scene::~Scene()
@@ -33,4 +33,14 @@ Function Scene::Finalize()
 {
 	auto functionName = name + delimiter + SceneMethod::Finalize;
 	return ScriptLoader::getFunction(functionName.c_str());
+}
+
+SceneType Scene::getType()
+{
+	return sceneType;
+}
+
+void Scene::setType(SceneType type)
+{
+	sceneType = type;
 }

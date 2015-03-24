@@ -46,34 +46,25 @@ bool OpenSquirrelFile(char* file_name)
 }
 
 // initialize, finalize関数を呼び出すかどうかのフラグ
-bool g_InitializeFlag = false;
-bool g_FinalizeFlag = false;
-bool g_FirstSceneFlag = true;
+//bool g_InitializeFlag = false;
+//bool g_FinalizeFlag = false;
+//bool g_FirstSceneFlag = true;
 
 // シーン名(テーブル名)を表す文字列
 
 // シーンを切り替える関数
 void ChangeScene(const SQChar* scene_name)
 {
-	// initialize関数を呼び出すフラグを立てる
-	g_InitializeFlag = true;
-
-	// finalize関数は、2回目以降のシーン切り替え時にのみ呼び出されるようにする
-	if (g_FirstSceneFlag)
-	{
-		g_FinalizeFlag = false;
-		g_FirstSceneFlag = false;
-	}
-	else
-	{
-		g_FinalizeFlag = true;
-	}
-
 	// 遷移先シーンを生成
 	auto nextScene = Scene(scene_name);
 
 	// シーン名をセットする
 	SceneController::getInstance()->pushScene(nextScene);
+}
+
+void BackScene()
+{
+	SceneController::getInstance()->popScene();
 }
 
 // 0と1を交互にセットする変数。g_JoypadInputStateのインデックスに指定し、
