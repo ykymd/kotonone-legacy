@@ -158,7 +158,7 @@ function Select::threadFunction()
             if (Select.isDiffMode) {
                 Select.isDiffMode = false;
             }else{
-                ChangeScene("Title");
+                BackScene("Title");
             }
         }
 

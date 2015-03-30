@@ -26,8 +26,8 @@ enum INPUT_TYPE
 	SIX,    // 6ボタン
 	SEVEN,	// 7ボタン
 	EIGHT,	// 8ボタン
-	ESC,		// ESCキー
-	SPACE,	 //スペースキー
+	ESC,	// ESCキー
+	SPACE,	//スペースキー
 };
 
 enum SYSTEM_SE {
