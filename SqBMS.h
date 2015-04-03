@@ -1,10 +1,10 @@
 #pragma once
 #include "CBMS.h"
-#include "BMSWrapper.h"
+//#include "BMSWrapper.h"
 
 #include <vector>
 
-using namespace BMS;
+//using namespace BMS;
 
 namespace Kotone{
 	// バインド用KotononeBMS管理クラス
@@ -61,7 +61,7 @@ namespace Kotone{
 		Kotone::CBMS bms;
 		Kotone::LPBMSBAR bar;
 
-		Chart *chart;
+		//Chart *chart;
 
 		static std::vector<std::string> readDir(std::string folder);
 	};

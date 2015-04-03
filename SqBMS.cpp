@@ -22,7 +22,7 @@ SqBMS::SqBMS()
 	// 選曲可能曲データの初期化
 	ZeroMemory(availableSongs, sizeof(availableSongs));
 
-	chart = nullptr;
+	//chart = nullptr;
 
 	// マシンの周波数を取得
 	LARGE_INTEGER freq;

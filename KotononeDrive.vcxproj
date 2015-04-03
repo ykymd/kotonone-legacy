@@ -21,13 +21,13 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>Intel C++ Compiler XE 15.0</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>Intel C++ Compiler XE 15.0</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -69,7 +69,7 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\BMSManager;C:\lib\SQUIRREL3\include;$(SQRAT_DIR)\include;C:\lib\Dxlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\lib\SQUIRREL3\include;C:\lib\Dxlib;C:\lib\sqrat-0.8.92\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -88,7 +88,7 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\BMSManager;$(DXSDK_DIR)\Include;C:\lib\SQUIRREL3\include;C:\lib\Dxlib;$(SQRAT_DIR)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\lib\SQUIRREL3\include;C:\lib\Dxlib;C:\lib\sqrat-0.8.92\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -97,7 +97,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>C:\lib\Dxlib;C:\lib\SQUIRREL3\lib;C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\Release</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\Debug;C:\lib\Dxlib;C:\lib\SQUIRREL3\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>squirrel_release.lib;sqstdlib_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>

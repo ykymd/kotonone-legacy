@@ -262,7 +262,7 @@ void CSquirrel::compileFile(char* srcfilename, char* dstfilename)
 		script.CompileFile(src.c_str());
 		script.WriteCompiledFile(dst.c_str());
 	}
-	catch (const Sqrat::Exception& ex)
+	catch (const Sqrat::Exception &ex)
 	{
 		// 例外メッセージを出力
 		StandardPrintFunc(vm, _SC("%s\n"), ex.Message().data());
