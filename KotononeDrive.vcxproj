@@ -70,14 +70,14 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>.\DxLibNoneModel_NoneSoftDrawCode_VC;C:\lib\SQUIRREL3\include;C:\lib\sqrat-0.8.92\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\DxLibNoneModel_NoneSoftDrawCode_VC;.\SQUIRREL3\include;.\sqrat-0.9.2\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\Debug;C:\lib\Dxlib;C:\lib\SQUIRREL3\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\Dxlib;.\SQUIRREL3\lib</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <AdditionalDependencies>squirrel_debug.lib;sqstdlib_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -89,7 +89,7 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>.\DxLibNoneModel_NoneSoftDrawCode_VC;C:\lib\SQUIRREL3\include;C:\lib\sqrat-0.8.92\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\DxLibNoneModel_NoneSoftDrawCode_VC;.\SQUIRREL3\include;.\sqrat-0.9.2\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -98,7 +98,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories>C:\Users\雄希\Documents\Visual Studio 2013\Projects\BMSManager\Debug;C:\lib\Dxlib;C:\lib\SQUIRREL3\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\Dxlib;.\SQUIRREL3\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>squirrel_release.lib;sqstdlib_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
