@@ -1,7 +1,6 @@
 #include "BindFunc.h"
 #include <sqrat.h>
 #include <vector>
-#include <boost/algorithm/string.hpp>
 #include "DxLib.h"
 
 #include "SceneController.h"
@@ -156,8 +155,8 @@ void SQ_DrawString(int x, int y, const SQChar* str, int Color, int fontsize, int
 	int height = fontsize + line_space_size;
 
 	// ‰üs‹æØ‚è‚Ì•¶š—ñ‚ğŠi”[‚·‚é
-	std::vector<tstring> vec;
-	boost::split(vec, str, boost::is_any_of(_T("\n")));
+	std::vector<tstring> vec = split(str, '\n');
+	//boost::split(vec, str, boost::is_any_of(_T("\n")));
 
 	// ‰üs‚²‚Æ‚É1’i‚¸‚ç‚·
 	for (int i = 0, n = vec.size(); i < n; i++)
@@ -165,6 +164,17 @@ void SQ_DrawString(int x, int y, const SQChar* str, int Color, int fontsize, int
 		// •¶š—ñ‚ğ•`‰æ
 		DxLib::DrawString(x, y + height + i, vec[i].c_str(), Color);
 	}
+}
+
+std::vector<std::string> split(const std::string &str, char delim) {
+	std::vector<std::string> res;
+	size_t current = 0, found;
+	while ((found = str.find_first_of(delim, current)) != std::string::npos) {
+		res.push_back(std::string(str, current, found - current));
+		current = found + 1;
+	}
+	res.push_back(std::string(str, current, str.size() - current));
+	return res;
 }
 
 int SQ_DrawVString(int x, int y, const SQChar* str, int Color, int FontHandle)
